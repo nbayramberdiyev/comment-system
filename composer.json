@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "nbayramberdiyev/comments",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Blog posts with comments",
+    "keywords": ["blog", "posts", "comments"],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
