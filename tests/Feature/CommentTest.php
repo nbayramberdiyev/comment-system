@@ -6,7 +6,6 @@ use App\Models\Comment;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
-use function route;
 
 class CommentTest extends TestCase
 {
@@ -21,9 +20,7 @@ class CommentTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJson(fn (AssertableJson $json) =>
-                $json->hasAll(['data' => $comments->count(), 'meta', 'links'])
-            )
+            ->assertJson(fn (AssertableJson $json) => $json->hasAll(['data' => $comments->count(), 'meta', 'links']))
             ->assertJsonStructure(['data' => [
                 '*' => ['parent_id', 'author', 'body', 'children'],
             ]]);
