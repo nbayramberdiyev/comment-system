@@ -20,6 +20,8 @@
 
 </div>
 
+![Preview](preview.png "Preview")
+
 ## Table of Contents
 
 <details open="open">
