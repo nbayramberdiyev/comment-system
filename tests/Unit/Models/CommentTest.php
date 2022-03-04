@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 final class CommentTest extends TestCase
 {
     /** @test */
-    public function testCommentModelHasCorrectAttributes()
+    public function testCommentModelHasCorrectAttributes(): void
     {
         $attributes = [
             'parent_id' => 1,
@@ -25,7 +25,7 @@ final class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testRequiredAttributesAreFillable()
+    public function testRequiredAttributesAreFillable(): void
     {
         $comment = new Comment();
 

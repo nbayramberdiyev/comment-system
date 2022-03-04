@@ -22,11 +22,17 @@ class Comment extends Model
         'body',
     ];
 
+    /**
+     * @return BelongsTo<Comment, Comment>
+     */
     public function parent(): BelongsTo
     {
         return $this->belongsTo(Comment::class, 'parent_id', 'id');
     }
 
+    /**
+     * @return HasMany<Comment>
+     */
     public function children(): HasMany
     {
         return $this->hasMany(Comment::class, 'parent_id')->latest();

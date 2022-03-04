@@ -13,7 +13,7 @@ class CommentTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function testCommentsCanBeListed()
+    public function testCommentsCanBeListed(): void
     {
         $comments = Comment::factory()->count(5)->create();
 
@@ -32,7 +32,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCanBeCreatedWhenValidDataProvided()
+    public function testCommentCanBeCreatedWhenValidDataProvided(): void
     {
         $comment = [
             'author' => 'Novruz',
@@ -50,7 +50,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCanBeCreatedForParentWhenValidDataProvided()
+    public function testCommentCanBeCreatedForParentWhenValidDataProvided(): void
     {
         $parent = Comment::factory()->create();
         $comment = [
@@ -71,7 +71,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCannotBeCreatedWhenAuthorIsInvalidOrEmpty()
+    public function testCommentCannotBeCreatedWhenAuthorIsInvalidOrEmpty(): void
     {
         $comment = [
             'author' => '',
@@ -88,7 +88,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCannotBeCreatedWhenBodyIsInvalidOrEmpty()
+    public function testCommentCannotBeCreatedWhenBodyIsInvalidOrEmpty(): void
     {
         $comment = [
             'author' => 'Novruz',
@@ -105,7 +105,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCannotBeCreatedForParentWhenParentIdIsInvalidOrEmpty()
+    public function testCommentCannotBeCreatedForParentWhenParentIdIsInvalidOrEmpty(): void
     {
         $comment = [
             'parent_id' => null,
@@ -123,7 +123,7 @@ class CommentTest extends TestCase
     }
 
     /** @test */
-    public function testCommentCannotBeCreatedForParentWhenParentDoesntExist()
+    public function testCommentCannotBeCreatedForParentWhenParentDoesntExist(): void
     {
         $comment = [
             'parent_id' => 1,
